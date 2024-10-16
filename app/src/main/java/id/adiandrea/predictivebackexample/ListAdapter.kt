@@ -1,5 +1,6 @@
 package id.adiandrea.predictivebackexample
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,7 +31,14 @@ class ListAdapter(val data: MutableList<Pokemon>): RecyclerView.Adapter<ListAdap
                 .into(binding.image)
 
             itemView.setOnClickListener {
-                //TODO setonclick
+                itemView.context.startActivity(
+                    Intent(
+                        itemView.context,
+                        DetailActivity::class.java
+                    )
+                        .putExtra("name", data[position].name)
+                        .putExtra("image", data[position].imageURL)
+                )
             }
         }
     }

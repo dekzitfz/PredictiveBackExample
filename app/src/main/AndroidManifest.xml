@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="id.adiandrea.predictivebackexample.DetailActivity" />
     </application>
 
 </manifest>
